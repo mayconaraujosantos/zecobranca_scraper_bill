@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pypdf2 = "*"
+pillow = "*"
+pyzbar = "*"
+opencv-python = "*"
+selenium = "*"
+webdriver-manager = "*"
+pyjwt = "*"
+flask = "*"
+pydantic = "*"
+
+[dev-packages]
+commitizen = "*"
+pre-commit = "*"
+
+[requires]
+python_version = "3.13"
+python_full_version = "3.13.5"

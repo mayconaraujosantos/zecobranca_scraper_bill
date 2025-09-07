@@ -1,0 +1,245 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pipenv/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env*
+.environment
+environment.yml
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Selenium
+geckodriver.log
+chromedriver
+chromedriver.exe
+selenium-debug.log
+
+# Screenshots
+*.png
+*.jpg
+*.jpeg
+debug_*.png
+erro_*.png
+*_screenshot.png
+
+# Logs
+*.log
+logs/
+log/
+
+# Cache e dados temporários
+.aguas_cache/
+cache/
+temp/
+tmp/
+
+# Arquivos de token e credenciais
+*token*.json
+*tokens*.json
+*credentials*.json
+*auth*.json
+aguas_manaus_*.json
+pix_result_*.json
+pix_code_*.txt
+
+# Encryption keys
+.encryption_key
+*.key
+*.pem
+
+# Dados sensíveis
+*_complete_data.json
+*_simple.json
+api_test_results.json
+
+# Configurações locais
+.env.local
+.env.development
+.env.test
+.env.production
+config_local.py
+local_settings.py
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Windows
+*.lnk
+
+# Linux
+*~
+
+# Monitoring/Observability
+prometheus_data/
+grafana_data/
+alertmanager_data/
+loki_data/
+
+# Backup files
+*.bak
+*.backup
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+
+# SSL certificates
+*.crt
+*.cert
+*.cer
+*.p12
+*.pfx
+ssl/
+
+# Node.js (se usar algum tooling frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Observability configs locais
+nginx/ssl/
+observability/*/data/
+
+# Pre-commit
+.pre-commit-config.yaml.bak
+
+# Scraped data
+scraped_data/
+output/
+results/
+
+# Test files
+test_data/
+test_output/
+
+# Profiling
+*.prof
+
+# Arquivos específicos do projeto
+# (descomente conforme necessário)
+# Pipfile.lock  # se quiser committar para reproduzir ambiente exato
+# .pre-commit-config.yaml  # se não quiser compartilhar hooks

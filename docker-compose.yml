@@ -1,0 +1,28 @@
+services:
+  amazonas-login:
+    build: .
+    container_name: amazonas-energy-automation
+    env_file: .env  # Adicione esta linha
+    environment:
+      - CPF_CNPJ=${CPF_CNPJ}
+      - SENHA=${SENHA}
+      - HEADLESS=${HEADLESS}
+    volumes:
+      - ./screenshots:/app/screenshots
+      - ./logs:/app/logs
+    restart: "no"
+    stdin_open: true
+    tty: true
+
+  selenium-vnc:
+    image: selenium/standalone-chrome-debug
+    container_name: selenium-vnc-viewer
+    ports:
+      - "5900:5900"
+      - "4444:4444"
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+    volumes:
+      - ./vnc-screenshots:/tmp/screenshots
+    restart: "unless-stopped"

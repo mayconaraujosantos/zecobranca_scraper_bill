@@ -1,0 +1,33 @@
+meta {
+  name: Logout
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/logout
+  body: none
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+script:post-response {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  // Limpar o token do environment após logout
+  bru.deleteEnvVar("token");
+  console.log("Token removido do environment após logout");
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Endpoint para fazer logout e invalidar a sessão atual.
+}

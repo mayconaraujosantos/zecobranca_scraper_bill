@@ -1,0 +1,52 @@
+meta {
+  name: Login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "cpf_cnpj": "01596670207",
+      "senha": "M@!kon1616"
+  }
+}
+
+script:post-response {
+  // Verificar se a resposta foi bem-sucedida
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  // Extrair e salvar o token
+  if (res.getStatus() === 200) {
+      const responseJson = res.getBody();
+      if (responseJson && responseJson.token) {
+          bru.setEnvVar("token", responseJson.token);
+          console.log("Token salvo automaticamente:", responseJson.token);
+      }
+  }
+  
+  // Teste para verificar se o token existe na resposta
+  test("Token is present", function () {
+      const jsonData = res.getBody();
+      expect(jsonData).to.have.property('token');
+  });
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Endpoint para autenticação na API. Retorna um token JWT que deve ser usado nas requisições autenticadas.
+}

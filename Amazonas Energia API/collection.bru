@@ -1,0 +1,27 @@
+meta {
+  name: Amazonas Energia API
+}
+
+auth {
+  mode: none
+}
+
+vars:pre-request {
+  baseUrl: http://localhost:5000
+  consumer_unit: 991643
+  client_id: 18839258
+}
+
+script:pre-request {
+  // Script global executado antes de cada requisição
+  console.log("Executando requisição para:", req.getUrl().toString());
+}
+
+script:post-response {
+  // Script global executado após cada requisição
+  console.log("Resposta recebida com status:", res.getStatus());
+}
+
+docs {
+  Collection para testar a API da Amazonas Energia - inclui login, consulta de faturas e outras operações
+}

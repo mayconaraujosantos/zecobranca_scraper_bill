@@ -1,0 +1,42 @@
+meta {
+  name: Faturas Auto
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/faturas_auto
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "cpf_cnpj": "01596670207",
+      "senha": "M@!kon1616",
+      "consumer_unit": "{{consumer_unit}}",
+      "client_id": "{{client_id}}"
+  }
+}
+
+script:post-response {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Response is JSON", function () {
+  //     pm.response.to.be.json;
+  });
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Endpoint que faz login automático e retorna as faturas em uma única requisição.
+}

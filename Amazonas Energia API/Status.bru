@@ -1,0 +1,29 @@
+meta {
+  name: Status
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/status
+  body: none
+  auth: inherit
+}
+
+script:post-response {
+  test("API is running", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Response time is less than 1000ms", function () {
+      expect(res.getResponseTime()).to.be.below(1000);
+  });
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Endpoint para verificar se a API está funcionando corretamente.
+}

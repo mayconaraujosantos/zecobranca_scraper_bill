@@ -1,0 +1,27 @@
+meta {
+  name: WEBHOOK
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:8080/webhook
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "number": "92986061046",
+    "message": "oi",
+    "quoted_message_id": "3EB0D2C0DF1DB21406FF"
+  }
+}
+
+settings {
+  encodeUrl: false
+}

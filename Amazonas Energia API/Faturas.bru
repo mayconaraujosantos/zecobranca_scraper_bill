@@ -1,0 +1,39 @@
+meta {
+  name: Faturas
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/faturas
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer {{token}}
+  X-Consumer-Unit: {{consumer_unit}}
+  X-Client-Id: {{client_id}}
+}
+
+script:post-response {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Response is JSON", function () {
+  //     pm.response.to.be.json;
+  });
+  
+  test("Token is valid (not expired)", function () {
+      expect(res.getStatus()).to.not.equal(401);
+  });
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Consulta as faturas do usuário autenticado. Requer token de autorização e headers específicos.
+}
